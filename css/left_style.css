@@ -1,0 +1,121 @@
+/* 头像图片 */
+.image {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1000;
+    transition: transform 0.5s ease; /* 添加过渡效果 */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+  /* 旋转 */
+.image:hover {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1.05);
+}
+  /* 图片 */
+.image img {
+    width: 150px;
+    height: 150px;
+}
+
+.saying {
+    position: fixed;
+    bottom: 20%;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align:center;
+    z-index: 1000;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(5px);
+    font-family: Pacifico,MiSans;
+    font-size: 40px;
+}
+
+.saying-item1 {
+    color: #ffffff;
+    text-align:left;
+    display: block;
+  }
+  .saying-item2 {
+    color: #ffffff;
+    text-align:center;
+    display: block;
+  }
+  .saying-item3 {
+    color: #ffffff;
+    text-align:right;
+    display: block;
+  }
+
+.saying:hover {
+    transform: translateX(-50%) scale(1.02);
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.abox {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 25%;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  z-index: 1000;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(5px);
+  font-family: MiSans;
+  font-size: 40px;
+}
+
+.abox:before {
+  content: "Find me!";
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.abox:hover {
+  transform: translateX(-50%) scale(1.02);
+  box-shadow: 0 0 15px rgb(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.abox:hover::before {
+  content: " ";
+  display: block;
+  font-weight: bold;
+  font-size: 1px;
+  margin-top: 10px;
+  z-index: 1001;
+  transition: all 0.5s ease;
+}
+
+.abox:hover::after {
+  content: "\aGithub : Freakz3z\aQQ : 3020517046\aWeChat : Freakz3z";
+  white-space: pre;
+  display: block;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+  z-index: 1001;
+  text-align: center;
+  transition: all 0.5s ease;
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<!-- 基础信息 -->
+<meta charset="utf-8">
+<title>Freakkの个人主页</title>
+<!-- jQuery -->
+<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/jquery/3.5.1/jquery.min.js"></script>
+<!-- 引入icon -->
+<link rel="shortcut icon" href="favicon.ico">
+<!-- 引入样式 -->
+<link rel="stylesheet" href="css/right_style.css">
+<link rel="stylesheet" href="css/left_style.css">
+<link rel="stylesheet" href="css/background.css">
+<link rel="stylesheet" href="css/pyramid-loader.css">
+<link rel="stylesheet" href="css/checkbox.css">
+<!-- <link rel="stylesheet" href="css/pointer.css"> -->
+<style>
+/* 引入字体 */
+@font-face {
+  font-family: 'Pacifico';
+  src: url('font/Pacifico-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('font/MiSans-Regular.subset.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'UnidreamLED';
+  src: url('font/UnidreamLED.ttf') format('truetype');
+}
+</style>
+</head>
+<body>
+<!-- 加载动画 -->
+<div id="loader">
+  <div class="pyramid-loader">
+    <div class="wrapper">
+      <span class="side side1"></span>
+      <span class="side side2"></span>
+      <span class="side side3"></span>
+      <span class="side side4"></span>
+      <span class="shadow"></span>
+    </div>  
+  </div>
+</div>
+<!-- 背景 -->
+<div class="background-all">
+  <img id="background" src="pic/background.png">
+  <div class="cover"></div>
+</div>
+<!-- 头像和Find me -->
+<div>
+  <div class="abox">
+    <div class="image"><img src="pic/avatar.jpg" alt="Avatar"></div>
+  </div>
+</div>
+<!-- 消息盒子 -->
+<div class="message-box"></div>
+<!-- 天气 -->
+<div id="weather" class="weather"></div>
+<!-- B站链接 -->
+<a href="https://www.bilibili.com" class="Bili">哔哩哔哩</a>
+<!-- 龙轩导航 -->
+<a href="http://ilxdh.com/friendshiplinks" class="navi">龙轩导航</a>
+<!-- 一言 -->
+<div id="one-word" class="one-word"></div>
+<!-- 时间日期 -->
+<div id="time-button" class="time"><time id="current-time" datetime=""></time></div>
+<!-- 我的话 -->
+<div id="saying" class="saying">
+  <div class="saying-item1">“</div>
+  <div class="saying-item2">don't be afraid</div>
+  <div class="saying-item2">and</div>
+  <div class="saying-item2">just be yourself</div>
+  <div class="saying-item3">”</div>
+</div>
+<!-- 代办 -->
+<div class="checkbox">
+  <div class="checkbox-item">
+    <input type="checkbox" id="cbx1" style="display: none;">
+    <label for="cbx1" class="check">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+今天你呼吸吗？
+    </label>
+  </div>
+  <div class="checkbox-item">
+    <input type="checkbox" id="cbx2" style="display: none;">
+    <label for="cbx2" class="check">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+今天你运动吗?
+    </label>
+  </div>
+  <div class="checkbox-item">
+    <input type="checkbox" id="cbx3" style="display: none;">
+    <label for="cbx3" class="check">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+今天你吃饭吗？
+    </label>
+  </div>
+  <div class="checkbox-item">
+    <input type="checkbox" id="cbx4" style="display: none;">
+    <label for="cbx4" class="check">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+今天你打瓦吗？
+    </label>
+  </div>
+  <div class="checkbox-item">
+    <input type="checkbox" id="cbx5" style="display: none;">
+    <label for="cbx5" class="check">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+今天就趋势！
+    </label>
+  </div>
+  <div class="checkbox-item">
+    <input type="checkbox" id="cbx6" style="display: none;">
+    <label for="cbx6" class="check">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+明天火葬场！
+    </label>
+  </div>    
+</div>
+<script>
+// 获取加载动画元素
+var loader = document.getElementById("loader");
+
+// 监听window的load事件
+window.addEventListener("load", function() {
+  // 延迟1秒后隐藏加载动画
+  setTimeout(function() {
+    loader.style.display = "none";
+  }, 1000);
+});
+
+// 消息盒子
+var messageBox = document.querySelector(".message-box");
+
+function showMessage(text) {
+  messageBox.textContent = text;
+  messageBox.style.display = "block";
+  messageBox.classList.add("show");
+
+  setTimeout(function() {
+    hideMessage();
+  }, 5000);
+}
+
+function hideMessage() {
+  messageBox.classList.remove("show");
+  setTimeout(function() {
+    messageBox.style.display = "none";
+  }, 500);
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  var currentTime = new Date().getHours();
+  var greetingText = "";
+
+  if (currentTime >= 0 && currentTime <= 2) {
+    greetingText = "夜深了 欢迎来到我的主页";
+  } else if (currentTime > 2 && currentTime <= 5) {
+    greetingText = "凌晨了 欢迎来到我的主页";
+  } else if (currentTime > 5 && currentTime <= 11) {
+    greetingText = "早上好 欢迎来到我的主页";
+  } else if (currentTime > 11 && currentTime <= 13) {
+    greetingText = "中午好 欢迎来到我的主页";
+  } else if (currentTime > 13 && currentTime <= 17) {
+    greetingText = "下午好 欢迎来到我的主页";
+  } else {
+    greetingText = "晚上好 欢迎来到我的主页";
+  }
+
+  setTimeout(function() {
+    showMessage(greetingText);
+  }, 3000);
+});
+
+// 一言部分
+var oneWordElement = document.querySelector('.one-word');
+function updateOneWord() {
+  fetch('https://www.mxnzp.com/api/daily_word/recommend?count=1&app_id=jfmnsns7irehsmjx&app_secret=hoLhLGu7MMQRDbBHbq09QAdUCGOCgKk2')
+    .then(response => response.json())
+    .then(data => {
+      if (data.code === 1) {
+        const dailyWords = data.data[0];
+        const author = dailyWords.author;
+        const content = dailyWords.content;
+        const text = author ? `${content}「${author}」` : content;
+        oneWordElement.innerText = text;
+      } else {
+        oneWordElement.innerText = '请点击刷新一言';
+      }
+    })
+    .catch(error => {
+      oneWordElement.innerText = '请点击刷新一言';
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(updateOneWord, 1000);
+});
+if (oneWordElement) {
+  oneWordElement.addEventListener('click', updateOneWord);
+}
+
+// 时间部分
+// 获取时间按钮和时间元素
+const timeButton = document.getElementById("time-button");
+const currentTime = document.getElementById("current-time");
+
+// 定时更新时间
+setInterval(() => {
+  // 获取当前时间
+  const currentDate = new Date();
+
+  // 格式化时间为所需的字符串
+  const hour = String(currentDate.getHours()).padStart(2, "0");
+  const minute = String(currentDate.getMinutes()).padStart(2, "0");
+  const second = String(currentDate.getSeconds()).padStart(2, "0");
+  const formattedTime = `${hour}:${minute}:${second}`;
+
+  // 设置时间元素的 datetime 属性和文本内容
+  if (currentTime) {
+    currentTime.setAttribute("datetime", formattedTime);
+    currentTime.textContent = formattedTime;
+  }
+}, 1000);
+
+//天气部分
+document.addEventListener('DOMContentLoaded', () => {
+  const weatherButton = document.querySelector('.weather');
+  let isCurrentWeather = true;
+
+  function getWeatherData() {
+    const address = '海口市';
+    let apiUrl = '';
+
+    if (isCurrentWeather) {
+      apiUrl = `https://www.mxnzp.com/api/weather/current/${address}?app_id=jfmnsns7irehsmjx&app_secret=hoLhLGu7MMQRDbBHbq09QAdUCGOCgKk2`;
+    } else {
+      apiUrl = `https://www.mxnzp.com/api/weather/forecast/${address}?app_id=jfmnsns7irehsmjx&app_secret=hoLhLGu7MMQRDbBHbq09QAdUCGOCgKk2`;
+    }
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        let weatherText = '';
+
+        if (data.code === 1) {
+          if (isCurrentWeather) {
+            const temp = data.data.temp;
+            const weather = data.data.weather;
+            weatherText = `Hello World\n${address}  天气${weather}  温度${temp}`;
+          } else {
+            const address = data.data.address;
+            const forecasts = data.data.forecasts;
+
+            if (forecasts && forecasts.length > 0) {
+              const todayForecast = forecasts[0];
+              const date = todayForecast.date;
+              const dayOfWeek = todayForecast.dayOfWeek;
+              const dayWeather = todayForecast.dayWeather;
+              const nightWeather = todayForecast.nightWeather;
+              const dayTemp = todayForecast.dayTemp;
+              const nightTemp = todayForecast.nightTemp;
+
+              weatherText = `Hello World\n${dayWeather}~${nightWeather}  ${dayTemp}~${nightTemp}`;
+            } else {
+              weatherText = '没有可用的天气预报数据';
+            }
+          }
+        } else {
+          weatherText = '请点击刷新天气';
+        }
+
+        if (weatherButton) {
+          weatherButton.innerText = weatherText;
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+  // 初始加载天气数据
+  getWeatherData();
+  // 按钮点击事件处理程序
+  if (weatherButton) {
+    weatherButton.addEventListener('click', () => {
+      isCurrentWeather = !isCurrentWeather;
+      getWeatherData();
+      showMessage("天气已经更新");
+    });
+  }
+});
+</script>
+</body>
+</html>
