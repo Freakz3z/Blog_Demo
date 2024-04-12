@@ -1,0 +1,340 @@
+/* 头像图片 */
+.image {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1000;
+    transition: transform 0.5s ease; /* 添加过渡效果 */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+  /* 旋转 */
+.image:hover {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1.05);
+}
+  /* 图片 */
+.image img {
+    width: 150px;
+    height: 150px;
+}
+
+.saying {
+    position: fixed;
+    bottom: 20%;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align:center;
+    z-index: 1000;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(5px);
+    font-family: Pacifico,MiSans;
+    font-size: 40px;
+}
+
+.saying-item1 {
+    color: #ffffff;
+    text-align:left;
+    display: block;
+  }
+  .saying-item2 {
+    color: #ffffff;
+    text-align:center;
+    display: block;
+  }
+  .saying-item3 {
+    color: #ffffff;
+    text-align:right;
+    display: block;
+  }
+
+.saying:hover {
+    transform: translateX(-50%) scale(1.02);
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.audio-element {
+  position: fixed;
+  top: 0.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 60px;
+  border-radius: 30px;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+
+.audio-element:hover {
+  transform: translateX(-50%) scale(1.02);
+}
+
+.abox {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 25%;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  z-index: 1000;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(5px);
+  font-family: MiSans;
+  font-size: 40px;
+}
+
+.abox:before {
+  content: "Find me!";
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.abox:hover {
+  transform: translateX(-50%) scale(1.02);
+  box-shadow: 0 0 15px rgb(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.abox:hover::before {
+  content: " ";
+  display: block;
+  font-weight: bold;
+  font-size: 1px;
+  margin-top: 10px;
+  z-index: 1001;
+  transition: all 0.5s ease;
+}
+
+.abox:hover::after {
+  content: "\a\a\aGithub : Freakz3z\a\a\a";
+  white-space: pre;
+  display: block;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 10px;
+  z-index: 1001;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+/* 天气按钮 */
+.weather {
+  position: fixed;
+  top: 10%; 
+  left: 80%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: auto;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  cursor: pointer;
+  font-family: Pacifico;
+  letter-spacing: 1px;
+  font-size: 22px;
+  transition: all 0.3s ease; /* 添加过渡效果 */
+  backdrop-filter: blur(5px);
+}
+
+/* 时间按钮 */
+.time {
+  position: fixed;
+  top: 20%; 
+  left: 80%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: auto;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  cursor: pointer;
+  font-family: "UnidreamLED";
+  letter-spacing: 3px;
+  font-size: 60px;
+  transition: all 0.3s ease; /* 添加过渡效果 */
+  letter-spacing: 6px;
+  backdrop-filter: blur(5px);
+}
+
+/* navi1 */
+.navi1 {
+position: fixed;
+top: 30%; 
+left: 80%;
+transform: translateX(-50%);
+width: 30%;
+height: auto;
+padding: 10px;
+color: #ffffff;
+background-color: rgba(0, 0, 0, 0.3);
+border-radius: 10px;
+text-align: center;
+z-index: 1000;
+cursor: pointer;
+font-family: MiSans;
+letter-spacing: 1px;
+font-size: 35px;
+transition: all 0.3s ease; /* 添加过渡效果 */
+backdrop-filter: blur(5px);
+text-decoration: none;
+}
+
+/* navi2 */
+.navi2 {
+  position: fixed;
+  top: 40%; 
+  left: 80%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: auto;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  cursor: pointer;
+  font-family: MiSans;
+  letter-spacing: 1px;
+  font-size: 35px;
+  transition: all 0.3s ease; /* 添加过渡效果 */
+  backdrop-filter: blur(5px);
+  text-decoration: none;
+}
+
+
+
+/* 一言按钮 */
+.one-word {
+  position: fixed;
+  bottom: 0.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: auto;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align:center;
+  z-index: 1000;
+  cursor: pointer;
+  font-family: "MiSans";
+  letter-spacing: 0.5px;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+} 
+
+
+/* 消息盒子 */
+.message-box {
+position: fixed;
+top: 7%;
+left: 50%;
+transform: translateX(-50%);
+width: auto;
+max-width: 30%;
+height: auto;
+padding: 10px;
+color: #ffffff;
+background-color: rgb(0, 0, 0, 0.3);
+border-radius: 40px;
+text-align: center;
+z-index: 1000;
+cursor: pointer;
+font-family: "MiSans";
+font-size: 22px;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+backdrop-filter: blur(5px);
+}
+
+.message-box.show {
+opacity: 1;
+}
+
+/* 待办盒子 */
+.checkbox {
+position: fixed;
+bottom: 20%;
+left: 80%;
+transform: translateX(-50%);
+width: 30%;
+height: auto;
+padding: 10px;
+color: #ffffff;
+background-color: rgba(0, 0, 0, 0.3);
+border-radius: 10px;
+text-align:left;
+z-index: 1000;
+cursor: pointer;
+font-family: MiSans;
+letter-spacing: 0.5px;
+font-size: 22px;
+transition: all 0.3s ease;
+backdrop-filter: blur(5px);
+}
+
+.checkbox-item {
+height: auto;
+padding: 10px;
+color: #ffffff;
+background-color: rgba(0, 0, 0, 0.3);
+text-align:left;
+z-index: 1000;
+margin-bottom: 10px;
+border-radius: 10px;
+backdrop-filter: blur(5px);
+display: block;
+}
+
+.checkbox-item span {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 22px;
+font-family: MiSans;
+letter-spacing: 0.5px;
+}
+
+.checkbox-item:hover {
+box-shadow: 0 0 15px rgb(0, 0, 0, 0.3);
+background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 悬停效果 */
+.one-word:hover,
+.weather:hover,
+.time:hover,
+.navi1:hover,
+.navi2:hover {
+transform: translateX(-50%) scale(1.02);
+box-shadow: 0 0 15px rgb(0, 0, 0, 0.3);
+background-color: rgba(0, 0, 0, 0.6);
+}
